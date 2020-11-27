@@ -86,15 +86,26 @@ cv2.imshow("",imgResult)
 cv2.imshow("",imgCanny)
 cv2.imshow("",imgContour)
 cv2.imshow("",img)
-cv2.waitKey(0)
-
-cap=cv2.VideoCapture(0)
+#cv2.waitKey(0)
+#exit()
+cap=cv2.VideoCapture("3.mp4")
 cap.set(3,640)
 cap.set(4,480)
 
-exit()
+# 人脸识别
+faceCascade = cv2.CascadeClassifier("haarcascades/haarcascade_frontalface_default.xml")
+eyeCascade = cv2.CascadeClassifier("haarcascades\haarcascade_eye.xml")
 while True:
     success,img=cap.read()
+    imgGray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    faces = faceCascade.detectMultiScale(imgGray, 1.1, 20)
+    for (x, y, w, h) in faces:
+        cv2.rectangle(img, (x, y), (x + w, y + h), (255, 0, 255), 3)
+        faceImgGray = imgGray[y:y + h, x:x + w]
+        # cv2.imshow(str(x),faceImgGray)
+        eyes = eyeCascade.detectMultiScale(faceImgGray, 1.1, 20)
+        for (ex, ey, ew, eh) in eyes:
+            cv2.rectangle(img, (x + ex, y + ey), (x + ex + ew, y + ey + eh), (255, 255, 0), 1)
     cv2.imshow("vidow",img)
     if cv2.waitKey(1)&0xff==ord("q"):
         break
