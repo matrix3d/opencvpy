@@ -8,7 +8,7 @@ imgCanny=cv2.Canny(img,100,100)#描边
 imgDialation=cv2.dilate(imgCanny,kernel,iterations=1)#膨胀
 imgEroded=cv2.erode(imgDialation,kernel,iterations=2)#qinzhu
 imgResize=cv2.resize(img,(1300,300))
-imgCropped=img[0:200,200:400]#裁剪 minx:maxx,miny:maxy
+imgCropped=img[0:200,200:400]#裁剪 miny:maxy,minx:maxx
 
 cv2.imshow("",imgGray)
 cv2.imshow("",imgBlur)
@@ -68,11 +68,17 @@ getContours(imgCanny)
 
 #人脸识别
 faceCascade=cv2.CascadeClassifier("haarcascades/haarcascade_frontalface_default.xml")
+eyeCascade=cv2.CascadeClassifier("haarcascades\haarcascade_eye.xml")
 img=cv2.imread("pic.jpg")
 imgGray=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
 faces=faceCascade.detectMultiScale(imgGray,1.1,1)
 for (x,y,w,h) in faces:
     cv2.rectangle(img,(x,y),(x+w,y+h),(255,0,255),3)
+    faceImgGray=imgGray[y:y+h,x:x+w]
+    #cv2.imshow(str(x),faceImgGray)
+    eyes=eyeCascade.detectMultiScale(faceImgGray,1.1,1)
+    for (ex,ey,ew,eh) in eyes:
+        cv2.rectangle(img,(x+ex,y+ey),(x+ex+ew,y+ey+eh),(255,255,0),1)
 
 cv2.imshow("",imgHSV)
 cv2.imshow("",mask)
