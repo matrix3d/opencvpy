@@ -1,2 +1,4 @@
 一定要用32位的py3.7
 然后安装opencv-python，官方版的不好用
+
+https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_calib3d/py_table_of_contents_calib3d/py_table_of_contents_calib3d.html#py-table-of-content-calib

@@ -88,7 +88,7 @@ cv2.imshow("",imgContour)
 cv2.imshow("",img)
 #cv2.waitKey(0)
 #exit()
-cap=cv2.VideoCapture("3.mp4")
+cap=cv2.VideoCapture("2.mp4")
 cap.set(3,640)
 cap.set(4,480)
 
@@ -107,6 +107,6 @@ while True:
         for (ex, ey, ew, eh) in eyes:
             cv2.rectangle(img, (x + ex, y + ey), (x + ex + ew, y + ey + eh), (255, 255, 0), 1)
     cv2.imshow("vidow",img)
-    if cv2.waitKey(1)&0xff==ord("q"):
+    if cv2.waitKey(30)&0xff==ord("q"):
         break
 
