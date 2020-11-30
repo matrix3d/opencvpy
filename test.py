@@ -107,6 +107,8 @@ while True:
         for (ex, ey, ew, eh) in eyes:
             cv2.rectangle(img, (x + ex, y + ey), (x + ex + ew, y + ey + eh), (255, 255, 0), 1)
     cv2.imshow("vidow",img)
-    if cv2.waitKey(30)&0xff==ord("q"):
-        break
+    if cv2.waitKey(int(1000/60)):
+        if cv2.getWindowProperty("vidow",cv2.WND_PROP_VISIBLE)<=0:
+            cv2.destroyAllWindows()
+            break
 
