@@ -16,3 +16,6 @@ tf比较大，很容易timeout
 然后安装opencv-python，官方版的不好用
 
 https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_calib3d/py_table_of_contents_calib3d/py_table_of_contents_calib3d.html#py-table-of-content-calib
+
+
+OPENVINO TensorRT libtorch tvm TFlite 移动端的有TVM、NCNN、MNN、TNN
