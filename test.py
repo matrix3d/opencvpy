@@ -88,13 +88,13 @@ cv2.imshow("",imgContour)
 cv2.imshow("",img)
 #cv2.waitKey(0)
 #exit()
+faceCascade = cv2.CascadeClassifier("haarcascades/haarcascade_frontalface_default.xml")
+eyeCascade = cv2.CascadeClassifier("haarcascades\haarcascade_eye.xml")
 cap=cv2.VideoCapture("2.mp4")
 cap.set(3,640)
 cap.set(4,480)
 
 # 人脸识别
-faceCascade = cv2.CascadeClassifier("haarcascades/haarcascade_frontalface_default.xml")
-eyeCascade = cv2.CascadeClassifier("haarcascades\haarcascade_eye.xml")
 while True:
     success,img=cap.read()
     imgGray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
