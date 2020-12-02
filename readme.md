@@ -22,3 +22,5 @@ D:\IntelSWTools\openvino_2020.3.341\deployment_tools\open_model_zoo\tools\downlo
 
 
 OPENVINO TensorRT libtorch tvm TFlite 移动端的有TVM、NCNN、MNN、TNN
+
+dlib vs mtcnn
