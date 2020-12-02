@@ -14,8 +14,8 @@
 
 import numpy as np
 
-from modules.pose import Pose, propagate_ids
-from pose_extractor import extract_poses
+from python_demos.human_pose_estimation_3d_demo.modules.pose import Pose, propagate_ids
+from python_demos.human_pose_estimation_3d_demo.pose_extractor import extract_poses
 
 AVG_PERSON_HEIGHT = 180
 

@@ -17,5 +17,8 @@ tf比较大，很容易timeout
 
 https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_calib3d/py_table_of_contents_calib3d/py_table_of_contents_calib3d.html#py-table-of-content-calib
 
+下载模型
+D:\IntelSWTools\openvino_2020.3.341\deployment_tools\open_model_zoo\tools\downloader>python downloader.py --all -o d:/model
+
 
 OPENVINO TensorRT libtorch tvm TFlite 移动端的有TVM、NCNN、MNN、TNN
