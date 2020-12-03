@@ -29,19 +29,6 @@ while True:
         cv2.rectangle(img,(best_location[3],best_location[0]),(best_location[1],best_location[2]),(255,0,255),2)
         cv2.putText(img,str(bestIndex),(best_location[3],best_location[0]),cv2.FONT_HERSHEY_COMPLEX,1,(0,255,255),2)
 
-
-    #unknown_picture = face_recognition.load_image_file("pic.jpg")
-    #unknown_face_encoding = face_recognition.face_encodings(unknown_picture)[0]
-
-    # Now we can see the two face encodings are of the same person with `compare_faces`!
-
-    #results = face_recognition.compare_faces([my_face_encoding], unknown_face_encoding)
-
-    #if results[0] == True:
-    #    print("It's a picture of me!")
-    #else:
-    #    print("It's not a picture of me!")
-
     cv2.imshow("", img)
     if cv2.waitKey(int(1000/60)):
         if cv2.getWindowProperty("",cv2.WND_PROP_VISIBLE)<=0:
